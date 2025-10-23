@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MTHS121 Exam Prep Mindmap</title>
+    <title>MTHS121 Exam Prep Timeline</title>
     <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
     <style>
         body {
@@ -14,7 +14,7 @@
             min-height: 100vh;
         }
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             background: white;
             border-radius: 15px;
@@ -39,12 +39,13 @@
         .content {
             padding: 30px;
         }
-        .mindmap-container {
+        .timeline-container {
             background: #f8f9fa;
             border-radius: 10px;
             padding: 20px;
             margin: 20px 0;
             border: 2px solid #e9ecef;
+            overflow-x: auto;
         }
         .controls {
             text-align: center;
@@ -116,13 +117,16 @@
         .paper-1 { background: #e74c3c; }
         .paper-2 { background: #3498db; }
         .both { background: #9b59b6; }
+        .day-node { fill: #ecf0f1; stroke: #bdc3c7; }
+        .phase-1 { fill: #e8f6f3; stroke: #a3e4d7; }
+        .phase-2 { fill: #e8f4fd; stroke: #a9cce3; }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>MTHS121 Exam Preparation Mindmap</h1>
-            <h2>Strategic 10-Day Study Plan</h2>
+            <h1>MTHS121 Exam Preparation Timeline</h1>
+            <h2>10-Day Strategic Study Plan</h2>
         </div>
         
         <div class="content">
@@ -148,89 +152,53 @@
             </div>
 
             <div class="controls">
-                <button class="btn" onclick="resetMindmap()">Reset View</button>
+                <button class="btn" onclick="resetChart()">Reset View</button>
                 <button class="btn" onclick="zoomIn()">Zoom In</button>
                 <button class="btn" onclick="zoomOut()">Zoom Out</button>
             </div>
 
-            <div class="mindmap-container">
+            <div class="timeline-container">
                 <div class="mermaid">
-mindmap
-  root(MTHS121 Exam Prep Strategy)
-    (Phase 1: Days 1-4<br/>Paper 1 Focus)
-      (Day 1: Foundation & Integration)
-        (Simultaneous Review)
-          (Matrix Algebra<br/>LE/SU 4)
-          (3D Space & Vectors<br/>LE/SU 5)
-        (Deep Dive: Integration<br/>LE/SU 6)
-          (Core Techniques)
-          (Practice Problems)
-      (Day 2: Core Calculus)
-        (Applications of Integration<br/>LE/SU 7)
-          (Areas between curves)
-          (Volumes of revolution)
-        (Hyperbolic Functions<br/>LE/SU 8)
-          (Definitions & derivatives)
-          (Integration practice)
-      (Day 3: Active Recall & Synthesis)
-        (No New Content)
-        (Theorems & Definitions)
-          (Required proofs practice)
-        (Past Papers - Paper 1)
-          (Timed practice<br/>90 minutes)
-          (Deep mistake analysis)
-      (Day 4: Final Review & Strategy)
-        (Weakness Attack)
-          (Targeted practice)
-        (Formula Derivation)
-          (Addendum D focus)
-        (Exam Strategy Review)
-          (Time management)
-          (Show all work)
-    (Phase 2: Days 5-10<br/>Paper 2 Focus)
-      (Day 5: Transition & Foundation)
-        (Paper 1 Final Review)
-          (Learn from Exam 1 experience)
-        (Start Algebra & Limits<br/>LE/SU 1 & 2)
-          (Foundation concepts)
-      (Day 6: Core Paper 2 Topics)
-        (Differentiation Apps<br/>LE/SU 3)
-          (Optimization)
-          (Curve sketching)
-        (Taylor Series<br/>LE/SU 9)
-          (Series expansion)
-          (Applications)
-      (Day 7: Practice & Refine)
-        (Past Papers - Paper 2)
-          (Full timed practice)
-        (Focus on Proofs<br/>LE2, LE3, LE4, LE6, LE8, LE9)
-          (Active recall writing)
-      (Day 8: Mock Exam & Review)
-        (Timed Paper 2)
-          (Simulate exam conditions)
-        (Deep Review of Mistakes)
-          (Root cause analysis)
-      (Day 9: High-Level Review)
-        (All Study Unit Outcomes)
-          (Self-assessment)
-        (Final Theorems & Definitions)
-          (Memory consolidation)
-      (Day 10: Confidence & Readiness)
-        (Light Review)
-          (Formula sheet glance)
-        (Mental Preparation)
-          (Rest & mindset)
-    (Key Success Principles)
-      (Active > Passive Learning)
-      (Focus on "Exercising of Skills")
-      (No Calculator Practice)
-      (Time Management)
-      (Show All Work)
-    (Critical Study Units)
-      (Paper 1: SU 4,5,6,7,8)
-      (Paper 2: SU 1,2,3,9)
-      (Proofs Required: LE2,3,4,6,8,9)
-      (No LE5 Proofs)
+flowchart LR
+    subgraph Phase1[Phase 1: Days 1-4 - Paper 1 Focus]
+        direction TB
+        Day1[<strong>Day 1: Foundation & Integration</strong><br/>Matrix Algebra SU4<br/>3D Space & Vectors SU5<br/>Integration SU6]
+        Day2[<strong>Day 2: Core Calculus</strong><br/>Applications of Integration SU7<br/>Hyperbolic Functions SU8<br/>Start Paper 2 Review]
+        Day3[<strong>Day 3: Active Recall & Synthesis</strong><br/>No New Content<br/>Theorems & Definitions<br/>Past Papers - Paper 1]
+        Day4[<strong>Day 4: Final Review & Strategy</strong><br/>Weakness Attack<br/>Formula Derivation<br/>Exam Strategy]
+    end
+
+    subgraph Phase2[Phase 2: Days 5-10 - Paper 2 Focus]
+        direction TB
+        Day5[<strong>Day 5: Transition & Foundation</strong><br/>Paper 1 Review<br/>Algebra & Limits SU1 & 2]
+        Day6[<strong>Day 6: Core Paper 2 Topics</strong><br/>Differentiation Apps SU3<br/>Taylor Series SU9]
+        Day7[<strong>Day 7: Practice & Refine</strong><br/>Past Papers - Paper 2<br/>Focus on Proofs]
+        Day8[<strong>Day 8: Mock Exam & Review</strong><br/>Timed Paper 2<br/>Deep Mistake Analysis]
+        Day9[<strong>Day 9: High-Level Review</strong><br/>All Study Unit Outcomes<br/>Final Theorems & Definitions]
+        Day10[<strong>Day 10: Confidence & Readiness</strong><br/>Light Review<br/>Mental Preparation]
+    end
+
+    Phase1 --> Phase2
+
+    classDef phase1 fill:#e8f6f3,stroke:#a3e4d7,stroke-width:3px
+    classDef phase2 fill:#e8f4fd,stroke:#a9cce3,stroke-width:3px
+    classDef dayNode fill:#ecf0f1,stroke:#bdc3c7,stroke-width:2px,rx:10px,ry:10px
+    
+    class Phase1 phase1
+    class Phase2 phase2
+    class Day1,Day2,Day3,Day4,Day5,Day6,Day7,Day8,Day9,Day10 dayNode
+
+    %% Success Principles
+    Success[<strong>Key Success Principles</strong><br/>Active > Passive Learning<br/>Focus on Exercising of Skills<br/>No Calculator Practice<br/>Time Management<br/>Show All Work]
+
+    Phase1 --> Success
+    Phase2 --> Success
+
+    %% Critical Study Units
+    StudyUnits[<strong>Critical Study Units</strong><br/>Paper 1: SU 4,5,6,7,8<br/>Paper 2: SU 1,2,3,9<br/>Proofs Required: LE2,3,4,6,8,9<br/>No LE5 Proofs]
+
+    Phase1 --> StudyUnits
+    Phase2 --> StudyUnits
                 </div>
             </div>
 
@@ -240,24 +208,46 @@ mindmap
             </div>
 
             <div class="study-tips">
-                <h3>💡 Proven Study Strategies</h3>
-                <ul>
-                    <li><strong>Active Recall:</strong> Write definitions/theorems from memory, then check</li>
-                    <li><strong>Spaced Repetition:</strong> Review previous days' topics briefly each morning</li>
-                    <li><strong>Practice Under Pressure:</strong> Time yourself to simulate exam conditions</li>
-                    <li><strong>Focus on Weaknesses:</strong> Use Day 3 analysis to target problem areas</li>
-                    <li><strong>Understanding > Memorization:</strong> Derive formulas to deepen understanding</li>
-                </ul>
+                <h3>💡 Day-by-Day Implementation Guide</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 15px;">
+                    <div>
+                        <h4>Days 1-2: Content Mastery</h4>
+                        <ul>
+                            <li>3-4 hours focused study sessions</li>
+                            <li>Follow "Exercising of Skills" lists</li>
+                            <li>Practice without calculator</li>
+                            <li>Evening: Active recall of definitions</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Days 3,7-8: Practice & Analysis</h4>
+                        <ul>
+                            <li>Timed past papers (90 min)</li>
+                            <li>Deep mistake analysis</li>
+                            <li>Target weakness remediation</li>
+                            <li>Proof practice for required theorems</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Days 4,9-10: Review & Strategy</h4>
+                        <ul>
+                            <li>Formula derivation practice</li>
+                            <li>Study unit outcomes self-check</li>
+                            <li>Exam strategy refinement</li>
+                            <li>Mental preparation</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
 
             <div class="study-tips">
-                <h3>📚 Resource Reminders</h3>
+                <h3>📚 Resource Utilization Strategy</h3>
                 <ul>
-                    <li>Use the <strong>"Exercising of Skills"</strong> lists in your study guide</li>
-                    <li>Practice <strong>without a calculator</strong> - it's not allowed in the exam</li>
-                    <li>Review <strong>Addendum D</strong> for essential formulas to derive</li>
-                    <li>Focus on <strong>required proofs only</strong> (LE2,3,4,6,8,9 - no LE5)</li>
-                    <li>Show <strong>all calculations and reasoning</strong> for full marks</li>
+                    <li><strong>Study Guide:</strong> Use "Exercising of Skills" as your primary task list</li>
+                    <li><strong>Addendum D:</strong> Derive all formulas - don't just memorize</li>
+                    <li><strong>Past Papers:</strong> Simulate real exam conditions - no calculator, timed</li>
+                    <li><strong>Proof Focus:</strong> LE2,3,4,6,8,9 only (skip LE5 proofs)</li>
+                    <li><strong>Active Recall:</strong> Write theorems/definitions from memory daily</li>
                 </ul>
             </div>
         </div>
@@ -268,15 +258,17 @@ mindmap
             startOnLoad: true,
             theme: 'default',
             securityLevel: 'loose',
-            mindmap: {
-                maxNodeWidth: 200
+            flowchart: {
+                useMaxWidth: false,
+                htmlLabels: true,
+                curve: 'basis'
             }
         });
 
-        function resetMindmap() {
-            const mindmap = document.querySelector('.mermaid');
-            const content = mindmap.innerHTML;
-            mindmap.innerHTML = content;
+        function resetChart() {
+            const chart = document.querySelector('.mermaid');
+            const content = chart.innerHTML;
+            chart.innerHTML = content;
             mermaid.init(undefined, document.querySelectorAll('.mermaid'));
         }
 
@@ -285,6 +277,7 @@ mindmap
             if (svg) {
                 const currentScale = parseFloat(svg.style.transform.replace('scale(', '').replace(')', '')) || 1;
                 svg.style.transform = `scale(${currentScale * 1.2})`;
+                svg.style.transformOrigin = 'left center';
             }
         }
 
@@ -293,6 +286,7 @@ mindmap
             if (svg) {
                 const currentScale = parseFloat(svg.style.transform.replace('scale(', '').replace(')', '')) || 1;
                 svg.style.transform = `scale(${currentScale * 0.8})`;
+                svg.style.transformOrigin = 'left center';
             }
         }
 
@@ -307,9 +301,19 @@ mindmap
                     zoomOut();
                 } else if (event.key === '0') {
                     event.preventDefault();
-                    resetMindmap();
+                    resetChart();
                 }
             }
+        });
+
+        // Initialize with left alignment
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(() => {
+                const svg = document.querySelector('.mermaid svg');
+                if (svg) {
+                    svg.style.transformOrigin = 'left center';
+                }
+            }, 1000);
         });
     </script>
 </body>
